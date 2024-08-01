@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de Mensagens WhatsApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enviar Mensagem</h1>
+        <label for="number">Número de WhatsApp:</label>
+        <input type="text" id="number" placeholder="+557792142954">
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" rows="5" placeholder="Digite sua mensagem aqui..."></textarea>
+
+        <button id="send">Enviar</button>
+    </div>
+
+    <script>
+        document.getElementById('send').addEventListener('click', async () => {
+            const number = document.getElementById('number').value;
+            const message = document.getElementById('message').value;
+
+            if (!number || !message) {
+                alert('Por favor, preencha todos os campos');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/send-message', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ number, message })
+                });
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Mensagem enviada com sucesso');
+                } else {
+                    alert('Erro ao enviar mensagem: ' + result.message);
+                }
+            } catch (error) {
+                alert('Erro ao enviar mensagem: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
