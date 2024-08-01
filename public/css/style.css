@@ -115,12 +115,12 @@
       gap: 15px; /* Espaçamento entre os ícones */
   }
   .footer-icon .btn {
-    width: 45px;
-    height: 45px;
+    width: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #007bff; /* Cor de fundo azul */
+    background-color: #FFFF0000; /* Cor de fundo azul */
     color: white; /* Cor do ícone */
     border: none; /* Remove a borda */
     border-radius: 50%; /* Torna os botões circulares */
