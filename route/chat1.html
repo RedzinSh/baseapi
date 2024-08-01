@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        .message .name {
+            font-weight: bold;
+        }
+
+        input, button {
+            padding: 10px;
+            border: none;
+            border-radius: 0;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        input {
+            flex: 1;
+            border-top: 1px solid #ddd;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Coloque tua mensagem aqui...">
+        <button id="send-button">Enviar</button>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        const username = localStorage.getItem('username');
+        if (!username) {
+            window.location.href = '/login1';
+        }
+
+        const loadMessages = () => {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            chatBox.innerHTML = '';
+            messages.forEach(msg => {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.innerHTML = `<div class="name">👤</div><div>${msg.text}</div>`;
+                chatBox.appendChild(messageElement);
+            });
+            chatBox.scrollTop = chatBox.scrollHeight;
+        };
+
+        const saveMessage = (msg) => {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            messages.push(msg);
+            localStorage.setItem('messages', JSON.stringify(messages));
+        };
+
+        sendButton.addEventListener('click', () => {
+            const text = messageInput.value.trim();
+            if (text) {
+                const msg = { name: username, text: text };
+                saveMessage(msg);
+                loadMessages();
+                messageInput.value = '';
+            }
+        });
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+
+        loadMessages();
+    </script>
+</body>
+</html>

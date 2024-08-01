@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dark api</title>
+    <meta name="description"content="uma api rest 100% profissional e confiável para os seus negócios, aqui você encontrará diversas apis de diferentes conteúdos."/>
+    <link rel="icon" href="https://telegra.ph/file/980cea6cb4f8e5a55a6ab.jpg" type="image/x-icon">
+
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+    <style>
+/* Reset some default styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Set the font and background color for the body */
+body {
+  margin: 0;
+  font-family: "Inter UI", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-image: url("https://i.pinimg.com/originals/d0/10/4f/d0104f4acab3baba34b669fefb101672.gif");
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #CFD8DC;
+  text-align: left;
+  background-color: #000000; }
+
+
+/* Style the header */
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* Style the section */
+section {
+    padding: 50px 0;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.heading-black {
+    color: #007bff;
+    font-weight: 800;
+    font-size: 50px; 
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.text-muted2 {
+    color: white;
+    font-weight: 800;
+    font-size: 30px; 
+    font-family: 'Kaushan Script', cursive;
+}
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Style the cards */
+.card-deck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     
+}
+
+.card {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    width: 85%;
+    max-width: 500px;
+    transition: transform 0.3s ease-in-out;
+    border: 0px solid rgba(0, 0, 0, 0.125);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.card-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.card-title2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.text-primary {
+    color: #007bff;
+}
+
+.text-info {
+    color: #17a2b8;
+}
+
+.pricing-list {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.pricing-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.pricing-list li:last-child {
+    border-bottom: none;
+}
+
+      .btn {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 15px;
+        letter-spacing: 2px
+        border-radius: 70%;
+      }
+      .btn:hover {
+        background: #289bb8;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #289bb8,
+                    0 0 25px #289bb8,
+                    0 0 50px #289bb8,
+                    0 0 100px #289bb8;
+      }
+
+      .btn span {
+        position: absolute;
+        display: block;
+      }
+
+      .btn span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #289bb8);
+        animation: btn-anim1 1s linear infinite;
+      }
+
+      @keyframes btn-anim1 {
+        0% {
+          left: -100%;
+        }
+        50%,100% {
+          left: 100%;
+        }
+      }
+
+      .btn span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #289bb8);
+        animation: btn-anim2 1s linear infinite;
+        animation-delay: .25s
+      }
+
+      @keyframes btn-anim2 {
+        0% {
+          top: -100%;
+        }
+        50%,100% {
+          top: 100%;
+        }
+      }
+
+      .btn span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #289bb8);
+        animation: btn-anim3 1s linear infinite;
+        animation-delay: .5s
+      }
+
+      @keyframes btn-anim3 {
+        0% {
+          right: -100%;
+        }
+        50%,100% {
+          right: 100%;
+        }
+      }
+
+      .btn span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #289bb8);
+        animation: btn-anim4 1s linear infinite;
+        animation-delay: .75s
+      }
+
+      @keyframes btn-anim4 {
+        0% {
+          bottom: -100%;
+        }
+        50%,100% {
+          bottom: 100%;
+        }
+      }
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.text-center {
+    text-align: center;
+}
+
+      .footer2{
+  text-align: center;
+  font-size: 50px;
+  margin: 10px;
+  color: white;
+  background: black;
+  margin: 0;
+  padding: 15px;
+  box-shadow: 0 0 3px white;
+}
+.footer2 a{
+  color: red;
+  text-decoration: none;
+  
+}
+       
+    </style>
+</head>
+<body>
+<footer class="footer2">
+<div class="d-sm-flex justify-content-center justify-content-sm-between">
+<h6><span style="color: red;">LOJINHA DARK</span></h6>
+</div>
+</footer>       
+
+  <section class="py-5 bg-dark" id="pricing">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+          <h2 class="heading-black text-primary">Tabela de preços</h2>
+          <p class="text-muted2 lead" style="font-style: italic;">Selecione a opção que mais cabe no seu bolso</p>
+        </div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-12 mx-auto">
+          <div class="card-deck pricing-table">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title2 pt-3">PLANO GRÁTIS</h3>
+                <h2 class="card-title text-primary mb-0">0 R$</h2>
+                <div class="text-muted font-weight-medium mt-2">Por tempo indeterminado.</div>
+                <ul class="list-unstyled pricing-list">
+                  <li> 100 request diário</li>
+                  <li>Sem Suporte na utilização da API.</li>
+                </ul>
+<a class="btn" href="/register">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        Registrar-se
+          </a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title2 pt-3">Plano - Premium</h3>
+                <h2 class="card-title text-info mb-0">R$ 30$</h2>
+                <div class="text-muted font-weight-medium mt-2">1 mês de uso</div>
+                <ul class="list-unstyled pricing-list">
+                  <li>Limit 20.000 / requests</li>
+                  <li>apiKey Customizada</li>
+                  <li>Pack de case usando a api (comandos prontos)</li>
+                  <li>Suporte na utilização da API.</li>
+                 
+                </ul>
+
+         <a class="btn" href="https://wa.me/556191969269/?text=quero obter o plano de 30$">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        Comprar Agora
+          </a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title2 pt-3">Plano - Gold</h3>
+                <h2 class="card-title text-info mb-0">R$ 50</h2>
+                <div class="text-muted font-weight-medium mt-2">2 mês de uso</div>
+                <ul class="list-unstyled pricing-list">
+                  <li>Limit 20.000 / requests</li>
+                  <li>ApiKey personalizada.</li>
+                  <li>Grupo de usuários vip/Premium.</li>
+                  <li>Suporte na utilização. ( 24horas )</li>
+                  <li>Pack de case usando a api (comandos prontos)</li>
+                  <li>Uma base api pra fazer a sua</li>
+                </ul>
+         <a class="btn" href="https://wa.me/556191969269/?text=quero obter o plano de 50$">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        Comprar Agora
+          </a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title2 pt-3">Plano - Adm</h3>
+                <h2 class="card-title text-info mb-0">R$ 100</h2>
+                <div class="text-muted font-weight-medium mt-2">tempo Indefinido</div>
+                <ul class="list-unstyled pricing-list">
+                  <li>ApiKey com requests ilimitado.</li>
+                  <li>ApiKey personalizada.</li>
+                  <li>Grupo de usuários vip/Premium.</li>                  
+                  <li>Pack de case usando a api (comandos prontos)</li>
+                  <li>Suporte na utilização. ( 24horas )</li>
+                  <li>Uma api completa para fazer sua própria api</li>
+                </ul>
+         <a class="btn" href="https://wa.me/556191969269/?text=quero obter o plano de 100$">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        Comprar Agora
+          </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer2 class="py-2">
+    <div class="container text-muted text-center">
+      <a href="https://youtube.com/@Pedrozz_Mods?si=Ubv-FVOKM81KdcdR" target="_blank">2024 Dark Stars - Todos os direitos reservados</a>
+    </div>
+  </footer2>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>

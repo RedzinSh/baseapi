@@ -1,0 +1,139 @@
+              <!DOCTYPE html>
+              <html lang="pt-br">
+              <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Login</title>
+              <style>
+                body {
+font-family: Arial, Helvetica, sans-serif;
+background: #310404 url(https://i.pinimg.com/originals/d0/10/4f/d0104f4acab3baba34b669fefb101672.gif) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+color: black;
+                                }
+
+                .form-container {
+                  width: 350px;
+                  height: 500px;
+                  background: rgba(255, 255, 255, 0.5); /* Fundo branco com opacidade reduzida */
+                  border: 2px solid rgba(255,0,0)
+              
+                  box-sizing: border-box;
+                  padding: 20px 30px;
+                  border-radius: 100px;
+                }
+                .title {
+                  text-align: center;
+                  font-family: Arial, Helvetica, sans-serif;
+                  margin: 10px 0 30px 0;
+                  font-size: 28px;
+                  font-weight: 800;
+                }
+
+                .form {
+                  width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 18px;
+                  margin-bottom: 15px;
+                }
+
+                .input {
+                  border-radius: 20px;
+                  border: 1px solid #c0c0c0;
+                  outline: 0 !important;
+                  box-sizing: border-box;
+                  padding: 12px 15px;
+                }
+
+                .page-link {
+                  text-decoration: underline;
+                  margin: 0;
+                  text-align: end;
+                  color: #747474;
+                  text-decoration-color: #747474;
+                }
+
+                .page-link-label {
+                  cursor: pointer;
+                  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+                  font-size: 9px;
+                  font-weight: 700;
+                }
+
+                .page-link-label:hover {
+                  color: #000;
+                }
+
+                .form-btn {
+                  padding: 10px 15px;
+                  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+                  border-radius: 20px;
+                  border: 0 !important;
+                  outline: 0 !important;
+                  background: teal;
+                  color: white;
+                  cursor: pointer;
+                  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                }
+
+                .form-btn:active {
+                  box-shadow: none;
+                }
+
+                .sign-up-label {
+                  margin: 0;
+                  font-size: 10px;
+                  color: black;
+                  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+                }
+
+                .sign-up-link {
+                  margin-left: 1px;
+                  font-size: 11px;
+                  text-decoration: underline;
+                  text-decoration-color: teal;
+                  color: red;
+                  cursor: pointer;
+                  font-weight: 800;
+                  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+                }
+
+                .buttons-container {
+                  width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  margin-top: 20px;
+                  gap: 15px;
+                }
+                
+                
+
+              </style>
+              </head>
+                <body>
+                  <center>
+                    <br></br><br></br>
+                    <br></br><br></br>
+                    <div class="form-container">
+                      <h3 class="title">Seja bem-Vindo</h3>
+                      <br></br>
+                      <form action="/login" method="POST" class="form">
+                        <input type="text" class="input" name="username" placeholder="• Nome" required>
+                        <input type="password" name="password" class="input" placeholder="• Senha" required>
+                        <br>
+                        <button class="form-btn">Login</button>
+                      </form>
+                      <h4 class="sign-up-label">Ainda não tem uma conta? <a href="/register" class="sign-up-link">Registrar</a></h4>
+                    </div>
+                  </center>
+                </body>
+              </html>

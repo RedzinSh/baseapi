@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8" ></script>
+  <link rel="stylesheet" href="/paginas/wstyle.css">
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+              <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8" >
+              </script>
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+
+             <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <link rel="icon" href="https://telegra.ph/file/0804121094c66843e41f6.jpg" type="image/x-icon">            
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8" >
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="shortcut icon" href="https://pedrozz-api.onrender.com/femeninotrava?apikey=pedrozz13" type="image/x-icon" />
+    <style>
+        /* Reset de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para o corpo da página */
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+          background: #310404 url(<%= currentUser.wallpaperLink %>) no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          color: white;
+          text-align: center;
+      }
+
+
+        .settings-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+          
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+      h2{
+          font-family: 'Kaushan Script', cursive;
+          font-size: 30px;
+        text-align: center;
+        color: black;
+      }
+      h6{
+          font-family: 'Kaushan Script', cursive;
+          font-size: 35px;
+        text-align: center;
+
+      }
+      h5{
+          font-family: 'Kaushan Script', cursive;
+          font-size: 19px;
+        text-align: center;
+
+      }
+      h3{
+          font-family: 'Kaushan Script', cursive;
+           font-size: 20px;
+         color: black;
+      }
+
+       .h34 {
+       font-family: Poppins;
+       font-size: 18px;
+       }
+        form {
+            padding: 20px 40px;
+        }
+
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: white;
+        }
+
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+       
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+      input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+      
+      input[type="text"] {
+          width: 90%;
+          padding: 10px;
+          margin: 10px 0;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-
+          color: white;
+          text-align: center;   
+          }
+      input[type="password"] {
+          width: 90%;
+          padding: 10px;
+          margin: 10px 0;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-
+          color: white;
+      }
+      button[type="submit"] {
+          display: block;
+          margin-top: 10px; 
+          padding: 10px;
+          font-size: 16px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+      
+        .error-message {
+            color: #d9534f;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        
+      .side-bar{
+    background: rgba(000,000,000 , 0.2);
+    backdrop-filter:blur(15px);
+    width: 290px;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left: -100%;
+    overflow-y: auto;
+    transition: 0.5s ease;
+    transition-property: left;
+    z-index: 9999;
+  }
+
+  .side-bar.active{
+    left: 0;
+  }
+
+  .side-bar .menu{
+    width: 100%;
+    margin-top: 35px;
+    text-shadow: 7px 7px 7px black;
+  }
+
+  .side-bar .menu .item{
+    position:relative;
+    cursor:pointer;
+  }
+
+  .side-bar .menu .item a{
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 40px;
+  }
+
+  .side-bar .menu .item a:hover{
+    transition: 0.3s ease;
+
+  }
+
+  .side-bar .menu .item i{
+    margin-right: 10px;
+  }
+
+  .side-bar .menu .item a .dropdown{
+    background: rgba(000,000,000 , 0.0);
+    position: absolute;
+    right:0;
+    margin: 13px;
+    transition: 0.3s ;
+  }
+  .sub-btn{
+    text-shadow: 7px 7px 7px black;
+    background: rgba(000,000,000 , 0.0);
+  }
+  .side-bar .menu .item .sub-menu{
+    background: transparent;
+    display:none;
+    box-shadow: 0 0 5px white;
+
+  }
+
+  .side-bar .menu .item .sub-menu a{
+    padding-left: 80px;
+    box-shadow: 0 0 5px white;
+
+  }
+
+  .rotate{
+    transform: rotate(90deg);
+  }
+  .item{
+    box-shadow: 0 0 2px white;
+    border-radius: 9px;
+    margin: 5px;
+  }
+.menu-btn, .close-btn {
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  margin: 25px;
+  cursor: pointer;
+  z-index: 9999;
+  top: 50px; 
+}
+
+.menu-btn i, .close-btn i {
+  cursor: pointer;
+}
+
+  .fe img{
+    position: absolute;
+    width: 30px;
+    position: absolute;
+    margin: 15px;
+    margin-left: 90%;
+    border-radius: 50%;
+    box-shadow: 0 0 30px white;
+  }
+
+  h1{
+    text-align: center;
+
+    margin-top: 25px;
+  }
+
+  .ab i{
+    border-radius: 50%;
+    text-align: center;
+
+  }
+  .txt i {
+    text-align: center;
+
+    margin-top: 25px;
+    font-size: 25px;
+    margin-left: 25px;
+    right: 1px;
+
+  }
+  .tutotxt {
+    background-color: var(--color-dark3);
+    border-radius: 7px;  
+    margin: 24px;
+    box-shadow: 0 0 7px darkgray;
+
+    }
+  .fotos {
+    width: 90%;
+    border-radius: 7px;
+  }
+  .tutotxtt{
+
+    margin: 7px;
+    text-align: center;
+  }
+  .aaaa {
+
+    margin: 5px;
+  }
+
+  .pedrozz{
+  color: black;
+  }
+  .pedrozz2{
+  color: #000000;
+
+  }
+  .pedrozz3{
+  color: #000000;
+
+  }
+     .center-image {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .center-image img {
+      border-radius: 100%;
+      width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+      height: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+     }
+      .contador-visitantes {
+        padding: 20px;
+
+
+        width: fit-content;
+        margin: auto; /* Centraliza o contador */
+    }
+
+    .contador-visitantes a {
+        border: none; /* Remove a borda do link, se houver */
+    }
+
+    .contador-visitantes img {
+        /* Personalizações da imagem aqui, se necessário */
+        max-width: 100px; /* Exemplo: Limita a largura da imagem */
+        border-radius: 5px; /* Bordas arredondadas na imagem */
+    }
+      .footer{
+  text-align: center;
+  font-size: 12px;
+  margin: 10px;
+  color: white;
+  background: black;
+  margin: 0;
+  padding: 15px;
+  box-shadow: 0 0 3px white;
+}
+.footer a{
+  color: red;
+  text-decoration: none;
+}
+       
+.form-container {
+width: 450px;
+height: 700px;
+text-align: center;
+background: rgba(255, 255, 255, 0.5);
+backdrop-filter:blur(5px);
+box-shadow: rgba(255,0,0) 0px 0px 20px;
+border-radius: 10px;
+box-sizing: border-box;
+padding: 20px 30px;
+}
+.form-container2 {
+width: 450px;
+height: 500px;
+text-align: center;
+background: rgba(255, 255, 255, 0.5);
+backdrop-filter:blur(5px);
+box-shadow: rgba(255,0,0) 0px 0px 20px;
+border-radius: 10px;
+box-sizing: border-box;
+padding: 20px 30px;
+}
+
+cabeca{
+background-color: Silver;
+  color: #00FFFF;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 10px 10px 10px black;
+  box-shadow: 0 0 20px #ffffff;
+}
+                .input {
+                  border-radius: 20px;
+                  border: 1px solid #c0c0c0;
+                  outline: 0 !important;
+                  box-sizing: border-box;
+                  padding: 12px 15px;
+                }
+    </style>
+</head>
+<body>
+                <footer class="footer">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+<h6><span style="color: red;">Dark Api</span></h6>
+              </div>
+               </footer>          
+  <!--SIDER BAR A BAIXO--->
+<nav>
+<div class="menu-btn">
+<i class="fas fa-bars"></i>
+
+</div>
+
+
+</div>
+
+<div class="side-bar">
+<div class="close-btn">
+<i class="mdi mdi-close-thick"></i>
+</div>
+
+<div class="txt">
+<div class="center-image">
+<a href="#" alt="pedrozz: criador">
+<img class="round-image" src="https://telegra.ph/file/70b6da147083ab19786e9.jpg" alt="by Pedrozz">
+</a>
+</div>
+<center>
+  <i class="darkin">DARK - API</i>
+</center>
+
+
+</div>
+<br>
+<hr>
+
+<div class="menu">
+<br></br>
+
+<hr>
+<br>
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-shield-crown'></i><i class="sup">CRÉDITOS/SUPORTE</i><i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-whatsapp" href="http://wa.me/556199317165">Grupo</a>
+<a class="mdi mdi-youtube" href="https://www.youtube.com/@Pedrozz_Mods">CanalP</a>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</nav>
+<!----SIDER BAR ACIMA----->
+  <br></br>  <br></br> <br></br>
+<center>
+<div class="form-container">
+  <h2>Configurações do Usuário</h2>
+  <br>
+  <div class="center-image">
+                        <a href="" alt="pedrozz: criador">
+                        <img class="round-image" src="<%= currentUser.photoLink %>" alt="by Pedrozz">
+                        </a>
+  </div>
+  <h2><%= currentUser.username %></h2>
+  <h3>Aqui está suas informações</h3>
+  <br><br>
+  <div class="h34">
+  <h4>Usuário:_<span style="color: green;"><%= currentUser.username%></span></h4>
+<br>
+<hr>
+<br>
+  <h4>Senha:_<span style="color: green;"><%= currentUser.password%></span></h4>
+<br>
+<hr>
+<br>
+  <h4>ApiKey:_<span style="color: green;"><%= currentUser.key%></span></h4>
+<br>
+<hr>
+<br>
+  <h4>Saldo:_<span style="color: green;"><%= currentUser.request%></span></h4>
+<br>
+<hr>
+<br>
+  <h4>Número:_<span style="color: green;"><%= currentUser.numero%></span></h4>
+ </div>
+  </div>
+  <center>
+<br></br>
+        <center>
+<div class="form-container2">
+<form action="/perfil" method="POST">
+  <label for="photoLink"> Nome, obs: Adm</label>
+<input type="text" id="username" name="username" value="<%= currentUser.username %>" readonly>
+<br>
+<hr>
+<br>
+<label for="photoLink">Nova foto:</label>
+<input type="text" id="photoLink" name="photoLink" value="<%= currentUser.photoLink %>">
+<br>
+<hr>
+<br>
+<label for="wallpaperLink">Novo wallpeper:</label>
+<input type="text" id="wallpaperLink" name="wallpaperLink" value="<%= currentUser.wallpaperLink %>">
+<br>
+<hr>
+<br>
+<label for="password">Nova Senha:</label>
+<input type="text" id="password" name="password" value="<%= currentUser.password %>">
+<br>
+<hr>
+<br>
+<center><button type="submit">Salvar Alterações</button></center>
+        </form>
+        </div>
+          </center>
+          <br></br>
+<center>
+<div class="form-container2">
+<form action="/perfil2" method="post">  
+  <h3>❗Somente Premium❗</h3>
+  <br>
+  <label for="username"> Nome</label>
+<input type="text" id="username" name="username" value="<%= currentUser.username %>" readonly>
+<br>
+<hr>
+<br>
+<label for="key">Nova key</label>
+<div class="form-group">
+<input type="text" id="key" name="key" value="<%= currentUser.key %>">
+</div>
+<div class="text-center">
+<center>
+<button type="submit" class="btn btn-primary">
+<i class="fas fa-key"></i>
+<em class="ml-2"></em>Mudar ApiKey
+</button>
+</center>        
+</div>
+</form>
+</div>
+</center>
+              <br></br><br></br><br></br><br></br>
+                <footer class="footer">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+<h5>Copyright © 2024 <span style="color: red;">Dark Stars</span></h5>
+              </div>
+               </footer>          
+                             <script type="text/javascript">
+                           // alert('deseja continuar?')
+                                $(document).ready(function(){
+
+                                  $('.sub-btn').click(function(){
+                                    $(this).next('.sub-menu').slideToggle();
+                                    $(this).find('.dropdown').toggleClass('rotate');
+                                  });
+
+                                  $('.menu-btn').click(function(){
+                                    $('.side-bar').addClass('active');
+                                    $('.menu-btn').css("visibility", "hidden");
+                                  });
+
+                                  $('.close-btn').click(function(){
+                                    $('.side-bar').removeClass('active');
+                                    $('.menu-btn').css("visibility", "visible");
+                                  });
+
+                                });
+                                </script>
+    
+</body>
+</html>

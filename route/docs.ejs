@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8" ></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Architects+Daughter|Bad+Script|Cookie|Courgette|Covered+By+Your+Grace|Dancing+Script|Gloria+Hallelujah|Great+Vibes|Handlee|Indie+Flower|Kaushan+Script|Pacifico|Patrick+Hand|Permanent+Marker|Sacramento|Satisfy|Shadows+Into+Light|Shadows+Into+Light+Two|Tangerine|Yellowtail" rel="stylesheet"> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8" ></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  
+    <link rel="shortcut icon" href="https://telegra.ph/file/0277179fcb6fe1bd054ca.jpg" type="image/x-icon" />
+              <title>Dark - api</title>
+          <style>
+            /* Cores do site */
+            @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
+
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: #310404 url(<%= wallpaperLink %>) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                color: white;
+            }
+           
+
+            .close-btn {
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 7px;
+                right: 5px;
+                cursor: pointer;
+                font-size: 20px;
+                color: #0000
+            }
+
+              .container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+                }
+
+
+            :root{
+                        --color-white: #fff;
+                        --color-dark1: rgb(39, 39, 39);
+                        --color-dark2: greenyellow;
+                        --color-dark3: black;
+                        --color-dark4: #1c1c1c;
+                        --color-dark5: #343434;
+                        --color-purple: #b040ff;
+            }
+            * {
+              margin:0;
+              padding:0;
+              box-sizing: border-box;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            #wrapper {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex
+            }
+
+            #wrapper #content-wrapper {
+                background-color: #0B1622;
+                width: 100%;
+                overflow-x: hidden
+            }
+
+            #wrapper #content-wrapper #content {
+                -webkit-box-flex: 1;
+                -ms-flex: 1 0 auto;
+                flex: 1 0 auto
+            }
+            .container,
+            .container-fluid,
+            .container-login {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem
+            }
+
+            @keyframes color {
+              0% {
+                background-position: 0% 50%;
+              }
+
+              50% {
+                background-position: 100% 50%;
+              }
+
+              100% {
+                background-position: 0% 50%;
+              }
+            }
+            section {
+              padding: 40px;
+              text-align: center;
+              background-color: rgba(240, 280, 240, 0.05);
+              margin: 20px 0;
+              border-radius: 10px;
+
+            }
+
+            section2 {
+              padding: 40px;
+              text-align: center;
+              background-color: black
+              border-radius: 10px;
+            }
+
+/* Sidebar */
+            .side-bar{
+              background: rgba(000,000,000 , 0.2);
+              backdrop-filter:blur(15px);
+              width: 290px;
+              height: 100vh;
+              position: fixed;
+              top:0;
+              left: -100%;
+              overflow-y: auto;
+              transition: 0.5s ease;
+              transition-property: left;
+              z-index: 9999;
+            }
+
+            .side-bar.active{
+              left: 0;
+            }
+
+            .side-bar .menu{
+              width: 100%;
+              margin-top: 35px;
+              text-shadow: 7px 7px 7px black;
+            }
+
+            .side-bar .menu .item{
+              position:relative;
+              cursor:pointer;
+            }
+
+            .side-bar .menu .item a{
+              color: #fff;
+              font-size: 16px;
+              text-decoration: none;
+              display: block;
+              padding: 5px 30px;
+              line-height: 40px;
+            }
+
+            .side-bar .menu .item a:hover{
+              transition: 0.3s ease;
+
+            }
+
+            .side-bar .menu .item i{
+              margin-right: 10px;
+            }
+
+            .side-bar .menu .item a .dropdown{
+              background: rgba(000,000,000 , 0.0);
+              position: absolute;
+              right:0;
+              margin: 13px;
+              transition: 0.3s ;
+            }
+            .sub-btn{
+              text-shadow: 7px 7px 7px black;
+              background: rgba(000,000,000 , 0.0);
+            }
+            .side-bar .menu .item .sub-menu{
+              background: transparent;
+              display:none;
+              box-shadow: 0 0 5px white;
+
+            }
+
+            .side-bar .menu .item .sub-menu a{
+              padding-left: 80px;
+              box-shadow: 0 0 5px white;
+
+            }
+
+            .rotate{
+              transform: rotate(90deg);
+            }
+            .item{
+              box-shadow: 0 0 2px white;
+              border-radius: 9px;
+              margin: 5px;
+            }
+            .close-btn{
+              position: absolute;
+              color: white;
+              font-size: 30px;
+              right: 0;
+              margin: 25px;
+              cursor: pointer;
+
+            }
+            .menu-btn i{
+
+            }
+
+            .menu-btn{
+              position: absolute;
+              color: #fff;
+              font-size: 25px;
+              margin: 17px;
+              cursor:pointer;
+              z-index: 9999;
+            }
+            .fe img{
+              position: absolute;
+              width: 30px;
+              position: absolute;
+              margin: 15px;
+              margin-left: 90%;
+              border-radius: 50%;
+              box-shadow: 0 0 30px white;
+            }
+
+            h1{
+              text-align: center;
+
+              margin-top: 25px;
+            }
+            .txt i {
+              text-align: center;
+
+              margin-top: 25px;
+              font-size: 25px;
+              margin-left: 25px;
+              right: 1px;
+
+            }
+            .tutotxt {
+              background-color: transparent;
+              border: 2px solid rgba(255, 255, 255, 0.5);
+              border-radius: 40px;
+              backdrop-filter: blur(6px);
+              margin: 24px;
+              box-shadow: 0 0 7px darkgray;
+
+              }
+            .fotos {
+              width: 90%;
+              border-radius: 7px;
+            }
+            .tutotxtt{
+
+              margin: 7px;
+              text-align: center;
+            }
+            .aaaa {
+
+              margin: 5px;
+            }
+
+            .pedrozz{
+            color: black;
+            }
+            .pedrozz2{
+            color: #000000;
+
+            }
+            .pedrozz3{
+            color: #000000;
+
+            }
+
+            .cabeca{
+              font-size: 45px;
+              background-color: black;
+              color: red;
+              text-align: center;
+              padding: 5px;
+            }
+            
+              .footer{
+              text-align: center;
+              font-size: 12px;
+              margin: 10px;
+              color: white;
+              background: black;
+              margin: 0;
+              padding: 15px;
+              box-shadow: 0 0 3px white;
+            }
+            .footer a{
+              color: red;
+              text-decoration: none;
+            }
+           span{
+           font-family: 'Kaushan Script', cursive;
+           }
+            .center-image img {
+              border-radius: 100%;
+              width: 200px;
+              height: 200px; 
+             }    
+             
+.sidercenter {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sidercenter img {
+  width: 100%; /* A imagem ocupa toda a largura do contêiner */
+  height: 90px ; /* A altura é ajustada automaticamente para manter a proporção */
+  object-fit: 50%; /* A imagem cobre completamente a área do contêiner */
+  aspect-ratio: 16 / 9; /* Mantém a imagem retangular na proporção desejada, ajuste conforme necessário */
+}
+
+             .verimg {
+              text-align: center;
+              margin-top: 20px;
+               font-family: 'Kaushan Script', cursive;
+            }
+              .verimg img {
+              border-radius: 100%;
+              width: 25px;
+              height: 25px; 
+             }    
+
+               @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% {
+                  transform: translateY(0);
+                }
+                40% {
+                  transform: translateY(-20px);
+                }
+                60% {
+                  transform: translateY(-10px);
+                }
+              }
+            .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            z-index: 9999; 
+            }
+
+            .preloader img {
+            width: 300px; 
+            height: auto; 
+            margin-bottom: 1px; 
+            margin-left: 0px;
+            position: relative;
+            align-items: center;
+            left: em;
+            }
+
+            .loader {
+            width: 200px;
+            height: 22px;
+            border-radius: 20px;
+            color: #000000;
+            border: 2px solid;
+            position: relative;
+            right: 4em;
+            top: 4em;
+            }
+            .loader::before {
+            content: "";
+            position: absolute;
+            margin: 2px;
+            inset: 0 100% 0 0;
+            border-radius: inherit;
+            background: #FF0040; 
+            box-shadow: 0 0 5px #FF0040, 0 0 25px #FF0040, 0 0 50px #FF0040, 0 0 200px #FF0040;
+            animation: l6 3.5s infinite;
+            }
+
+            @keyframes l6 {
+            100% {inset:0}
+            }
+            .container1 {
+              max-width: 600px;
+              margin: 0 auto;
+              padding: 20px;
+              background-color: transparent;
+              border: 2px solid rgba(255, 255, 255, 0.5);
+              border-radius: 70px;
+              backdrop-filter: blur(2px);
+              box-shadow: 0 0 6px red;
+              
+            }
+            .darkin{
+            font-family: fantasy;
+            color: red;
+            }
+
+            .tutotxtt1 {
+              text-align: center;
+            }
+
+            .user-info1 {
+              display: flex;
+              align-items: center;
+              margin-bottom: 15px;
+            }
+
+            .user-photo1 {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              margin-right: 10px;
+            }
+
+            .user-details1 {
+              flex-grow: 1;
+            }
+
+            .user-name1 {
+              font-weight: bold;
+              font-size: 18px;
+            }
+
+            .user-requests1 {
+              color: #666;
+            }
+
+            .hr1 {
+              border: 0;
+              border-top: 1px solid #ccc;
+              margin: 10px 0;
+            }
+
+      .btn {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 15px;
+        letter-spacing: 2px
+        border-radius: 70%;
+      }
+      .btn:hover {
+        background: #289bb8;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #289bb8,
+                    0 0 25px #289bb8,
+                    0 0 50px #289bb8,
+                    0 0 100px #289bb8;
+      }
+
+      .btn span {
+        position: absolute;
+        display: block;
+      }
+
+      .btn span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #289bb8);
+        animation: btn-anim1 1s linear infinite;
+      }
+
+      @keyframes btn-anim1 {
+        0% {
+          left: -100%;
+        }
+        50%,100% {
+          left: 100%;
+        }
+      }
+
+      .btn span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #289bb8);
+        animation: btn-anim2 1s linear infinite;
+        animation-delay: .25s
+      }
+
+      @keyframes btn-anim2 {
+        0% {
+          top: -100%;
+        }
+        50%,100% {
+          top: 100%;
+        }
+      }
+
+      .btn span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #289bb8);
+        animation: btn-anim3 1s linear infinite;
+        animation-delay: .5s
+      }
+
+      @keyframes btn-anim3 {
+        0% {
+          right: -100%;
+        }
+        50%,100% {
+          right: 100%;
+        }
+      }
+
+      .btn span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #289bb8);
+        animation: btn-anim4 1s linear infinite;
+        animation-delay: .75s
+      }
+
+      @keyframes btn-anim4 {
+        0% {
+          bottom: -100%;
+        }
+        50%,100% {
+          bottom: 100%;
+        }
+      }
+
+.btn:hover {
+    background-color: #0056b3;
+}
+              .footer{
+              text-align: center;
+              font-size: 12px;
+              margin: 150px;
+              color: white;
+              background: black;
+              margin: 0;
+              padding: 15px;
+              box-shadow: 0 0 5px white;
+            }
+            .footer a{
+              color: red;
+              text-decoration: none;
+            }
+            
+            hr{
+            color: green;
+
+            }
+            a{
+           font-family: 'Kaushan Script', cursive;
+           }
+           .h22{
+           font-family: 'Kaushan Script', cursive;
+           font-size: 50px;
+           color: red;
+           text-shadow: 0px 2px 4px white;
+           }
+
+:root {
+  --color-body: #b6cbce;
+  --color-heading: #fefefe;
+  --color-base: #000000;
+  --color-base2: #292929cc;
+  --color-brand: #b1110e;
+  --color-brand2: #ff0000;
+  --sidbar-width: 240px;
+  --font-base: "Bai Jamjuree";
+}
+
+
+a {
+  text-decoration: none;
+  color: var(--color-body);
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  color: var(--color-brand);
+}
+
+img {
+  width: 100%;
+}
+
+.text-brand {
+  color: var(--color-brand);
+}
+
+.bg-base {
+  background-color: var(--color-base);
+}
+
+.full-height {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.shadow-effect {
+  transition: all 0.5s;
+}
+
+.shadow-effect:hover {
+  box-shadow: -6px 6px 0 0 var(--color-brand);
+}
+
+.iconbox {
+  width: 60px;
+  height: 60px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background-color: var(--color-brand);
+  color: var(--color-body);
+}
+
+/* CARD */
+.card-custom .card-custom-image {
+  overflow: hidden;
+}
+
+.card-custom .card-custom-image img {
+  transition: all 0.4s ease;
+}
+
+.card-custom:hover .card-custom-image img {
+  transform: scale(1.1);
+}
+
+.card-custom-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CONTACT */
+#contact .form-control {
+  background-color: var(--color-base);
+  border-color: var(--color-base);
+  color: var(--color-body);
+}
+
+#contact .form-control:focus {
+  border-color: var(--color-brand);
+  box-shadow: none;
+}
+
+#contact .form-control::placeholder {
+  color: var(--color-body);
+}
+
+#contact input.form-control {
+  height: 44px;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-base);
+  border-radius: 100px;
+  font-size: 24px;
+}
+
+.darkin{
+font-family: fantasy;
+color: red;
+font-size: 22px;
+}
+
+    </style>
+</head>
+
+<budy>
+
+<header>
+<!--SIDER BAR A BAIXO--->
+<nav>
+<div class="menu-btn">
+<i class="fas fa-bars"></i>
+
+</div>
+
+
+</div>
+
+<div class="side-bar">
+<div class="close-btn">
+<i class="mdi mdi-close-thick"></i>
+</div>
+<div class="txt">
+<!----
+<div class="sidercenter">
+<a href="#" alt="pedrozz: criador">
+<img class="round-image" src="https://j.top4top.io/p_3068vk6ci0.gif" alt="by Pedrozz">
+</a>
+</div>
+----->
+<br></br>
+<center><div class="h22" >DARK API</div></center>
+</div>
+<hr>
+
+<div class="menu">
+
+<div class="item">
+<a class="sub-btn"><i class='fa fa-download'></i>DOWLOADS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+
+<a class="mdi mdi-youtube" target="_blank" href="/download/play?username=<%= username %>&apikey=<%= key %>&nome=pedrozz_mods">Play</a>
+<a class="mdi mdi-youtube" target="_blank" href="/download/play2?username=<%= username %>&apikey=<%= key %>&nome=pedrozz_mods">Play V2</a>
+<a class="mdi mdi-youtube" target="_blank" href="/download/playvd?username=<%= username %>&apikey=<%= key %>&link=pedrozz_mods">Play Video</a>
+<a class="mdi mdi-youtube" target="_blank" href="/download/playvd2?username=<%= username %>&apikey=<%= key %>&link=pedrozz_mods">Play Video V2</a>
+<a class="mdi mdi-youtube" target="_blank" href="/download/ytmp3?username=<%= username %>&apikey=<%= key %>&link=">Ytbmp3</a>
+<a class="mdi mdi-youtube" target="_blank" href="/download/ytmp4?username=<%= username %>&apikey=<%= key %>&link=">Ytbmp4</a>
+<a class="mdi mdi-instagram" target="_blank" href="/api/instagram?username=<%= username %>&apikey=<%= key %>&url=https://www.instagram.com/reel/C7fj6UJI3C-/?igsh=Y3FocnFnam5uYXht">Instagram VD/AD</a>
+<a class="fa fa-download" target="_blank" href="/api/tiktok?username=<%= username %>&apikey=<%= key %>&link=https://vm.tiktok.com/ZMRXoPvCv/">TikTok</a>
+<a class="fa fa-download" target="_blank" href="/api/telegraPh?username=<%= username %>&apikey=<%= key %>&img=https://telegra.ph/file/25511e2a5e98b3fabe3c9.jpg">TelegraPh</a>
+<a class="mdi mdi-twitter" target="_blank" href="/api/twitter?username=<%= username %>&apikey=<%= key %>&link=">Twitter</a>
+<a class="mdi mdi-soundcloud" target="_blank" href="/api/soundcloud?username=<%= username %>&apikey=<%= key %>&link=https://m.soundcloud.com/raptrapbrasil/teto-mustang-preto">SoundCloud</a>
+<a class="mdi mdi-emoticon-devil" target="_blank" href="/api/xvideosdl?username=<%= username %>&apikey=<%= key %>&url=https://www.xvideos.com/video.ucccavdc067/minha_meia-irma_timida_me_pega_me_masturbando_com_sua_calcinha_e_eu_a_fodo_com_forca_ate_gozar_em_sua_bunda._h._l.">Xvideos download</a>
+<a class="fa fa-download" target="_blank" href="/api/mediafire?url=&apikey=<%= key %>&username=<%= username %>">Mediafire</a>
+<a class="mdi mdi-emoticon-lol" target="_blank" href="/api/audiomeme?query=lula&apikey=<%= key %>&username=<%= username %>">AudioMeme</a>
+</div>
+</div>
+
+<hr>
+
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-tab-search'></i>PESQUISAS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+
+<a class="mdi mdi-emoticon-devil" target="_blank" href="/api/xvideoporno?username=<%= username %>&apikey=<%= key %>&nome=novinhas">Xvideos porno</a>
+<a class="mdi mdi-emoticon-devil" target="_blank" href="/api/xvideossh?username=<%= username %>&apikey=<%= key %>&q=novinha">Xvideos pesquisa</a>
+<a class="mdi mdi-magnify" target="_blank" href="/api/gp?username=<%= username %>&apikey=<%= key %>&nome=jogos">Grupos</a>
+<a class="mdi mdi-pinterest" target="_blank" href="/api/pin?username=<%= username %>&apikey=<%= key %>&query=cat">Pinterest</a>
+<a class="mdi mdi-magnify" target="_blank" href="/api/wall?username=<%= username %>&apikey=<%= key %>&">Wallpaper Random</a>
+<a class="mdi mdi-magnify" target="_blank" href="api/wallpaper?username=<%= username %>&apikey=<%= key %>&query=anime">Wallpaper Pesquisa</a>
+<a class="mdi mdi-magnify" target="_blank" href="/api/pensador?nome=Scooby &apikey=<%= key %>&username=<%= username %>">Filme</a>
+<a class="mdi mdi-magnify" target="_blank" href="/api/pensador?nome=wandinha&apikey=<%= key %>&username=<%= username %>">Série</a>
+<a class="mdi mdi-magnify" target="_blank" href="/api/pensador?nome=poesias&apikey=<%= key %>&username=<%= username %>">Pensador</a>
+<a class="mdi mdi-music" target="_blank" href="/api/letramusica?username=<%= username %>&apikey=<%= key %>&texto=repdominato">Letra Música</a>
+</div>
+</div>
+
+
+<hr>
+
+
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-sticker-emoji'></i>FIGURINHAS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/api/ttp?texto=Bartolomeu&username=<%= username %>&apikey=<%= key %>">Ttp</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/api/emojimix?emoji1=🥺&emoji2=😱&username=<%= username %>&apikey=<%= key %>">EmojiMix</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/api/emojimixt?emoji1=😍&emoji2=😘&texto=Dark Api&username=<%= username %>&apikey=<%= key %>">EmojiMix Com Texto</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_anime?username=<%= username %>&apikey=<%= key %>">Figu - Anime</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_coreana?username=<%= username %>&apikey=<%= key %>">Figu - Coreana</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_emoji?username=<%= username %>&apikey=<%= key %>">Figu - Emoji</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_meme?username=<%= username %>&apikey=<%= key %>">Figu - Meme</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_bebe?apikey=<%= key %>">Figu - Bebe</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_desenho?username=<%= username %>&apikey=<%= key %>">Figu - Desenho</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_animais?username=<%= username %>&apikey=<%= key %>">Figu - Animais</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_raiva?username=<%= username %>&apikey=<%= key %>">Figu - Raiva</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_roblox?username=<%= username %>&apikey=<%= key %>">Figu - Roblox</a>
+<a class="mdi mdi-sticker-emoji" target="_blank" href="/sticker/figu_aleatori?username=<%= username %>&apikey=<%= key %>">Figu - Aleatorias</a>
+</div>
+</div>
+                            
+
+<hr>
+
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-image-edit'></i>PHOTOOXY<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/angelwing?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">ANGELWING </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/hackneon?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Hackneon </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/fpsmascote?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Fpsmascote </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/equipemascote?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Equipemascote </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/txtquadrinhos?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Txtquadrinhos </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/3dsilver?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">3dsilver </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/frozen?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Frozen </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/goldtext?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Goldtext </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/starballons?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Starballons </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/ffavatar?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Ffavatar </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/ffbanner?texto=Dark-Api&texto2=pedrozz_Mods&username=<%= username %>&apikey=<%= key %>">Ffbanner </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/mascotegame?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Mascotegame </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/mascoteavatar?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Mascoteavatar </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/wingeffect?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Wingeffect </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/angelglx?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Angelglx </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/gizquadro?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Gizquadro </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/blackpink?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Blackpink </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/girlmascote?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Girlmascote </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/logogame?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Logogame </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/romantic?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Romantic </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/fire?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Fire </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/smoke?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Smoke </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/papel?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Papel </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/narutologo?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Narutologo </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/lovemsg?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Lovemsg </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/lovemsg2?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Lovemsg2 </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/lovemsg3?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Lovemsg3 </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/coffecup?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Coffecup </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/coffecup2?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Coffecup2 </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/florwooden?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Florwooden </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/madeira?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Madeira </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/gameplay?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Gameplay </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/googlesg?texto=Dark-Api&texto2=dark api a melhor&texto3= pedrozz_Mods&username=<%= username %>&apikey=<%= key %>">Googlesg </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/neon2?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Neon2 </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/lobometal?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Lobometal </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/harryp?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Harry Potter </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/cup?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Cup </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/txtborboleta?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Txtborboleta </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/shadow?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Shadow </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/cemiterio?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Cemiterio </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/metalgold?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Metalgold </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/efeitoneon?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Efeitoneon </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/flaming?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Flaming </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/shadow-sky?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Shadow-Sky </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/metallic?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Metallic </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/naruto?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Naruto </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/pubg?texto=Dark-Api&texto2=pedrozz_Mods&username=<%= username %>&apikey=<%= key %>">Pubg </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/under-grass?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Under-Grass </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/flower-typography?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Flower-Typography </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/picture-of-love?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Picture Of Love </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/coffee-cup?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Coffee Cup </a>
+<a class="mdi mdi-image-edit" target="_blank" href="api/photooxy/flower-typography?texto=Dark-Api&username=<%= username %>&apikey=<%= key %>">Butterfly </a>
+</div>
+</div>
+
+<hr>
+
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-image-area-close'></i>IMAGENS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-image-area-close" target="_blank" href="/api/alerta?username=<%= username %>&apikey=<%= key %>&texto=dark-Api">Img Alerta</a>
+<a class="mdi mdi-image-area-close" target="_blank" href="/api/fatos?username=<%= username %>&apikey=<%= key %>&texto=dark-Api">Img Fatos</a>
+<a class="mdi mdi-image-area-close" target="_blank" href="/api/mm?username=<%= username %>&apikey=<%= key %>&url=https://telegra.ph/file/0277179fcb6fe1bd054ca.jpg">Img MM</a>
+<a class="mdi mdi-image-area-close" target="_blank" href="/api/nokia?username=<%= username %>&apikey=<%= key %>&url=https://telegra.ph/file/0277179fcb6fe1bd054ca.jpg">Img Nokia</a>
+<a class="mdi mdi-image-area-close" target="_blank" href="/api/sadcat?username=<%= username %>&apikey=<%= key %>&texto=Dark Api">Img Sad Cat</a>
+<a class="mdi mdi-image-area-close" target="_blank" href="/api/legendaimg?username=<%= username %>&apikey=<%= key %>&image=https://telegra.ph/file/0277179fcb6fe1bd054ca.jpg&texto1=dark Api&texto2=Dark Stars">Img Legenda</a>
+<a class="mdi mdi-image-area-close" target="_blank" href="/api/bemvindo?username=<%= username %>&apikey=<%= key %>&avatar=https://telegra.ph/file/0277179fcb6fe1bd054ca.jpg&fundo=https://telegra.ph/file/256d08a2a3cee4464140e.jpg&texto1=Bem vindo&texto2=Dark--Api&texto3=666">Img Bem-Vindo</a>
+<a class="mdi mdi-diamond-stone" target="_blank" href="/api/travazap?username=<%= username %>&apikey=<%= key %>">Img Trava zap</a>
+<a class="mdi mdi-diamond-stone" target="_blank" href="/api/femininotrava?username=<%= username %>&apikey=<%= key %>">Img Trava Feminino</a>
+</div>
+</div>
+
+<hr>
+
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-diamond-stone'></i>Consultas/Premium<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-diamond-stone" target="_blank" href="/api/only?username=<%= username %>&apikey=<%= key %>">Img Onlyfans</a>
+<a class="mdi mdi-diamond-stone" target="_blank" href="/api/contasOnly?username=<%= username %>&apikey=<%= key %>">Contas Only</a>
+<a class="mdi mdi-diamond-stone" target="_blank" href="/api/foto18?username=<%= username %>&apikey=<%= key %>">Foto +18</a>
+<a class="mdi mdi-diamond-stone" target="_blank" href="/api/video18?username=<%= username %>&apikey=<%= key %>">Vídeo +18</a>
+<a class="mdi mdi-laptop" target="_blank" href="/api/cpf?cpf=45317828791&username=<%= username %>&apikey=<%= key %>">Consulta CPF</a>
+<a class="mdi mdi-laptop" target="_blank" href="/api/nome?nome=Jair Messias Bolsonaro&username=<%= username %>&apikey=<%= key %>">Consulta NOME</a>
+<a class="mdi mdi-laptop" target="_blank" href="/api/cep?code=73151010&username=<%= username %>&apikey=<%= key %>">Consulta CEP</a>
+<a class="mdi mdi-laptop" target="_blank" href="/api/numero?query=556199317165&username=<%= username %>&apikey=<%= key %>">Consulta NÚMERO</a>
+</div>
+</div>
+
+<hr>
+
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-cube-outline'></i>OUTROS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-cube-outline" target="_blank" href="/api/metadinha?username=<%= username %>&apikey=<%= key %>">Metadinha</a>
+<a class="mdi mdi-cube-outline" target="_blank" href="/api/letras?nome=pedrozz&username=<%= username %>&apikey=<%= key %>">Letras Diferentes</a>
+<a class="mdi mdi-cube-outline" target="_blank" href="/api/tempo?city=sao%20paulo&username=<%= username %>&apikey=<%= key %>">Clima</a>
+<a class="mdi mdi-cube-outline" target="_blank" href="/api/printsite?url=&username=<%= username %>&apikey=<%= key %>">Print Site</a>
+<a class="mdi mdi-cube-outline" target="_blank" href="/creator/qr-code?username=<%= username %>&apikey=<%= key %>&texto=pedrozzMods">Creator Qr-Code</a>
+<a class="mdi mdi-cube-outline" target="_blank" href="/creator/img?frase=O que nao nos mata nos fortalece&autor=Dark-Api&username=<%= username %>&apikey=<%= key %>">Creator Img-Frase</a>
+<a class="mdi mdi-cube-outline" target="_blank" href="/fr/frases?username=<%= username %>&apikey=<%= key %>">Frases aleatória</a>
+</div>
+</div>
+
+<hr>
+
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-robot-happy'></i>Inteligências<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-robot-happy" target="_blank" href="/api/gemini?query=bom diaa&username=<%= username %>&apikey=<%= key %>">Gemini </a>
+<a class="mdi mdi-robot-happy" target="_blank" href="/api/chatgpt?pergunta=me conte uma piada&username=<%= username %>&apikey=<%= key %>">Gpt</a>
+<a class="mdi mdi-robot-happy" target="_blank" href="/api/gpt4?text=bom diaa&username=<%= username %>&apikey=<%= key %>">Gpt4</a>
+<a class="mdi mdi-robot-happy" target="_blank" href="/api/simih?language=pt&text=oi&username=<%= username %>&apikey=<%= key %>">Simih </a>
+<a class="mdi mdi-robot-happy" target="_blank" href="/api/tradutor?ling=pt&text=hello&username=<%= username %>&apikey=<%= key %>">Tradutor </a>
+<a class="mdi mdi-robot-happy" target="_blank" href="/api/turbo?text=bom diaa&username=<%= username %>&apikey=<%= key %>">Turbo </a>
+<a class="mdi mdi-robot-happy" target="_blank" href="api/transcrever?link=https://e.top4top.io/m_3067808xg0.mp3&username=<%= username %>&apikey=<%= key %>">Transcrever</a>
+<a class="mdi mdi-robot-happy" target="_blank" href="api/gtts?ling=pt&text=dark api a melhor que tem heheh&username=<%= username %>&apikey=<%= key %>">Gtts</a>
+<a class="mdi mdi-robot-happy" target="_blank" href="/chatPedrozz">Chat ia</a>
+</div>
+</div>
+
+<hr>
+
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-robot-happy'></i>BOTS/TUTORIAIS<i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-robot-happy" target="_blank" href="https://youtu.be/KkGfziIFiFo?si=LC2-IDDdLnS6fAWf">Bartolomeu Bot</a>
+
+<a class="mdi mdi-robot-happy" target="_blank" href="https://youtu.be/otzzTmcNN8A?si=95sNx5prfTNE5r09">Base Bot</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/AbLfy3Msdno">Cmd Audio</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/8NkETIA3alY">Cmd documento</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/ZwNttr5pEiM">Cmd Meme</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/S3qbd8WU9XA?si=TPB66BE6GB6HW91G">Grupo a/f</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/AlnOP3MO_Bg?si=hK6JbZfpMmfNQ8e1">cmd não encontrado</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/ZZS1wLPlA3o?si=lkEEKLBEcJ9YvcUy">Img aleatória</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/jRa5l2mMY_c">Cmd Play</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/dGMSWPaMEAA">Cmd Letra música</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/bUMWwVHaU4U?si=EnxHpWT1dMs8ac8o">Cmd Dono</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/y9oijIWLIuM?si=Tf-yArDwpsIAVMIe">Cmd Pack Sticker</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/EbmN6VSaPFk?si=zsXhMrU0F3KnkoDY">Sh Start</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/giPrXwTr6_U?si=nONZrDhdyqdmCAUp">PushName</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/wF0V83HhCRg?si=6RQwcq5cQyii-ICS">Verificação Zap</a>
+<a class="mdi mdi-brain" target="_blank" href="https://youtu.be/VqGJ5d8h-UI?si=eTmN1GMt_eHAJIRL">Criar Menu</a>
+</div>
+</div>
+<br></br>
+<br></br>
+
+<hr>
+<br>
+<div class="item">
+<a class="sub-btn"><i class='mdi mdi-shield-crown'></i><i class="sup">CRÉDITOS/SUPORTE</i><i class="fas fa-angle-right dropdown"></i></a>
+<div class="sub-menu">
+<a class="mdi mdi-whatsapp" href="https://wa.me/556199317165/?text=Olá gostaria de suporte na api">Número</a>
+<a class="mdi mdi-whatsapp" href="https://chat.whatsapp.com/He2LRVtIwTK45wH4M1J18w">Grupo</a>
+<a class="mdi mdi-youtube" href="https://www.youtube.com/@Pedrozz_Mods">Canal</a>
+<a class="mdi mdi-instagram" href="https://instagram.com/pedrozz_13755">Instagram</a>
+</div>
+</div>
+<br></br><br></br><br></br><br></br>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</nav>
+<!----SIDER BAR ACIMA----->
+</header>
+
+            
+<!---  <div class="preloader">
+   <img src="https://b.top4top.io/p_30686vbsz0.gif" alt="Preloader Image">
+<!----- <div class="loader"></div>
+</div>--->
+            
+<div class="cabeca">
+<h4><span style="color: red;">Dark - Api</span></h4>
+</div>
+<center><h1>Seja Bem-Vindo <%= user.username %>!</h1>
+<i class="fa fa-heart fa-2x" style="color: #FF0040;"></i><br></certer>
+                    
+
+<h3><span style="color: white;" class="display-4 fw-bold" data-aos="fade-up" id="text"></span></h3>
+<div class="tutotxt" class="display-1 fw-bold" data-aos="fade-up" data-aos-delay="1">
+<div class="ip">
+<div class="card">
+<div class="card-body">
+<h5 class="font-weight-bold text-danger text-uppercase"></h5>
+<div class="center-image">
+<a href="/perfil" alt="pedrozz: criador">
+<img class="round-image" src="<%= photoLink %>" alt="by Pedrozz">
+</a>
+</div>  
+<br>
+<h3 style="color: red;" class="font-weight-bold">↶ Aqui esta suas informacoes ↷</h3>
+<div class="video-container">
+<center>
+</center>
+<p></p
+</br>
+<% if (user.adm === 'sim') { %>
+<div class="verimg">
+<a href="/perfil" alt="pedrozz: criador">
+<span style="color: green;">Administrador .</span><img class="round-image" src="https://i.top4top.io/p_306167nx30.gif" alt="by Pedrozz">
+</a>
+</div>  
+  <% } else { %>
+    <h3>Usuário:<span style="color: red;">Comum</span></h3>
+  <% } %> 
+<h4>KEY: <%= key %></h4>
+<h4>REQUEST: <%= request %></h4>
+<h4>DATA: <%= data %></h4>
+<h4>HORA: <%= hora %></h4>              
+<br>
+<h3>OBS:<span style="color: red;">Se a Url não for tire o S do httpS 😘</span></h3>
+<p>Para editar seu perfil clique na foto na foto acima</p>
+<br><hr>
+<center><a class="btn" href="/valores">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+VALORES
+</a> </center>
+</form>
+</center>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container2" id="services" class="full-height px-lg-5">
+<div class="row pb-4" data-aos="fade-up">
+<div class="col-lg-8">
+<center>
+<h1 class="display-4 fw-bold" data-aos="fade-up">CRIADORES<span class="text-brand"></span> 
+</h1>
+<center>
+</div>
+</div>
+
+<div class="row gy-4">
+<div class="col2-md-4" data-aos="fade-up">
+<div class="tutotxt">
+<div class="iconbox rounded-4">
+<i class="mdi mdi-youtube"></i>
+</div>
+<center><h4 class="mt-4 mb-2" style="font-family: fantasy;">Pedrozz_Mods</h4></center>
+<p style=" font-family: 'Kaushan Script', cursive;">Se você caminha sozinho, você vai mais rápido Se vocês caminharem juntos, vocês irão mais longe</p>
+<center>
+<a class="btn" href="https://youtube.com/@pedrozz_mods?si=Uy0yd5FsOsagRLKW">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+Canal
+</a>
+</center>
+</div>
+</div>
+
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+<div class="tutotxt">
+<div class="iconbox rounded-4">
+<i class="mdi mdi-youtube"></i>
+</div>
+<center><h4 class="mt-4 mb-2" style="font-family: fantasy;">Ritinha/Arcanja</h4></center>
+<p style=" font-family: 'Kaushan Script', cursive;">Primeiro amarás o Corinthians e só assim então poderá amar outro alguém!
+</p>
+<center><a class="btn" href="https://youtube.com/@ritinha_bots?si=1rFxLDwpaywis2a_">
+<span></span>
+<span></span>
+<span></span>
+<span></span>Canal</a></center>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<div tabindex="0" class="content" onfocus="closeSidebar()" id="content">
+</div>
+</div>
+
+<!---
+
+<center><h3><span style="color: red;">ADMINISTRADORES</span></h3></center>
+<div class="container1">
+  <div class="tutotxt1">
+    <div class="tutotxtt1">
+      <center>
+        <% 
+          const topUsers = readUsersFromFile();
+          topUsers.sort((a, b) => {
+            if (a.adm === 'sim' && b.adm !== 'sim') return -1;
+            if (a.adm !== 'sim' && b.adm === 'sim') return 1;
+            if (a.premium === 'sim' && b.premium !== 'sim') return -1;
+            if (a.premium !== 'sim' && b.premium === 'sim') return 1;
+            if (a.premium === 'não' && b.premium === 'não') return b.request - a.request;
+            return 0;
+          }).slice(0, 10).forEach(function(user) { 
+        %>
+        <br>
+        <div class="user-info">
+          <img class="user-photo" src="<%= user.photoLink %>" alt="Foto do Usuário">
+          <div class="user-details">
+            <% if (user.adm === 'sim') { %>
+            <div class="verimg">
+              <h2><span style="color: green;">Administrador</span></h2>
+            </div>  
+            <% } %>
+            <% if (user.premium === 'sim') { %>
+            <div class="verimg">
+              <a href="/perfil" alt="<%= user.username %>: criador">
+                <span style="color: green;">PREMIUM .</span><img class="round-image" src="https://i.top4top.io/p_306167nx30.gif" alt="by Pedrozz">
+              </a>
+            </div>  
+            <% } else { %>
+            <h3><span style="color: red;">Usuário Grátis</span></h3>
+            <% } %>
+            <div class="user-name">Usuário: <%= user.username %></div>
+            <div class="user-requests">Total de Requests: <%= user.request %></div>
+          </div>
+        </div>
+        <hr><br>
+        <% }); %>
+      </center>
+    </div>
+  </div>
+</div>
+----->
+<!-- Javascript -->
+
+<br></br><br></br><br></br><br></br>
+
+<footer class="footer">
+
+<div class="d-sm-flex justify-content-center justify-content-sm-between">
+
+<h2><span class="text-muted d-block text-center text-sm-left d-sm-inline-block"></span></h3>
+<h3>Copyright © 2024 <span style="color: red;">Dark Stars</span></h3>
+</div>
+</footer>
+<script>
+window.onload = function() {
+setTimeout(function() {
+document.querySelector('.preloader').style.display = 'none';
+}, 3000); 
+
+setTimeout(initAOS, 3500);
+
+setTimeout(showSwalAlert, 5000);
+
+setInterval(function() {
+document.getElementById('slide' + contador).checked = true;
+contador++;
+
+if (contador > 5) {
+
+contador = 1;
+}}, 3000);};
+
+function initAOS() {
+AOS.init();
+}
+
+function showSwalAlert3() {
+Swal.fire({
+title: 'Olá <%= username %>!',
+html: `
+<br>
+<div class="center-image">
+<a href="#" class="text-center">
+<img src="https://telegra.ph/file/7d8d7e3a5bae5355b5e8d.jpg">
+</a>
+</div>
+<br>
+<h4>Ola! Seja Bem Vindo a Dark - Api❤ <span style="color: red;">Dark Stars</span></h4>
+<br>
+`,
+showClass: {
+popup: 'animate_animated animate_fadeInDown'
+},
+hideClass: {
+popup: 'animate_animated animate_fadeOutUp'
+}
+});
+}
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+$('.sub-btn').click(function(){
+$(this).next('.sub-menu').slideToggle();
+$(this).find('.dropdown').toggleClass('rotate');
+});
+
+$('.menu-btn').click(function(){
+$('.side-bar').addClass('active');
+$('.menu-btn').css("visibility", "hidden");
+});
+
+$('.close-btn').click(function(){
+$('.side-bar').removeClass('active');
+$('.menu-btn').css("visibility", "visible");
+});
+});
+
+
+let contador = 1;
+
+setInterval( function(){
+document.getElementById('slide' + contador).checked = true;
+contador++;
+
+if (contador > 5) {
+contador = 1;
+}}, 3000 );
+
+document.addEventListener('DOMContentLoaded', (event) => {
+showWelcomeBox();
+});
+
+function closeWelcomeBox() {
+document.querySelector('.welcome-container').style.display = 'none';
+}
+
+function showWelcomeBox() {
+
+document.getElementById('welcomeBox').style.display = 'block';
+}
+
+function closeWelcomeBox() {
+document.getElementById('welcomeBox').style.display = 'none';
+}
+
+
+</script>
+<script>
+const textElement = document.getElementById('text');
+const phrases = ['Seja Bem-Vindo🌹', 'Ainda estamos em desenvolvimento⚙️', 'Explore nossas opções.', 'Obrigado por usar nossa api🥰', 'rest api by dark stars🤗','esplore a sua criatividade na nossa api👩‍💻','estamos sempre trazendo o melhor conteudo para você🙅','Ficamos felizes de te ver aqui','A comunidade Dark Stars sempre está evoluindo 🤑','Todos os direitos reservados a Pedrozz_Mods e Ritinha✨'];
+let phraseIndex = 0;
+let letterIndex = 0;
+
+function typeWriter() {
+  if (letterIndex < phrases[phraseIndex].length) {
+    textElement.innerHTML += phrases[phraseIndex].charAt(letterIndex);
+    letterIndex++;
+    setTimeout(typeWriter, 100);
+  } else {
+    setTimeout(() => {
+      textElement.innerHTML = ''; // Limpa o texto para a próxima frase.
+      letterIndex = 0; // Reseta o índice da letra.
+      phraseIndex = (phraseIndex + 1) % phrases.length; // Passa para a próxima frase.
+      typeWriter(); // Reinicia a digitação.
+    }, 2000); // Espera um pouco antes de começar a digitar novamente.
+  }
+}
+
+// Inicia a digitação assim que a página carrega.
+document.addEventListener('DOMContentLoaded', typeWriter);
+</script>
+<script>
+// Código JavaScript para otimizar o HTML para melhor desempenho
+
+// Remover espaços em branco desnecessários
+document.documentElement.normalize();
+
+// Remover comentários
+document.querySelectorAll("<!-- -->").forEach((comment) => {
+  comment.remove();
+});
+
+// Remover atributos vazios
+document.querySelectorAll("*[ ]").forEach((element) => {
+  Object.keys(element.attributes).forEach((attribute) => {
+    if (!element.attributes[attribute].value) {
+      element.removeAttribute(attribute);
+    }
+  });
+});
+
+// Minificar HTML
+document.documentElement.outerHTML = document.documentElement.outerHTML.replace(/>\s+</g, "><");
+</script>
+
+              
+</body>
+</html>

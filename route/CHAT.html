@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://telegra.ph/file/8ff3f6e58eaaadafd5db7.jpg" type="image/x-icon" />
+<title>Chat IA</title>
+<style>
+  body {
+      background-image: url('https://telegra.ph/file/e06b4d4ad41b943a8cf76.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+       align-items: center;
+  justify-content: center;
+  text-align: center;
+  }
+
+
+    .header {
+        background: rgba(255, 255, 255, 0.5); /* Fundo branco com opacidade reduzida */
+        color: black;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .button {
+        background-color: black;
+        color: white;
+        padding: 15px 30px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .button:hover {
+        background-color: #0056b3;
+    }
+  .footer{
+    text-align: center;
+    font-size: 12px;
+    margin: 10px;
+    color: white;
+    background: black;
+    margin: 0;
+    padding: 15px;
+    box-shadow: 0 0 3px white;
+  }
+  .footer a{
+    color: red;
+    text-decoration: none;
+  }
+
+  .footer a {
+      color: #007bff;
+      text-decoration: none;
+  }
+
+  .footer a:hover {
+      text-decoration: underline;
+  }
+
+  @media (min-width: 576px) {
+      .footer p {
+          margin-bottom: 0;
+      }
+  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Garante que o texto também esteja centralizado */
+}
+
+.image-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px 5px rgba(256, 255, 255, 0.9); /* Sombra branca com opacidade */
+  margin-bottom: 20px;
+   align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+}
+p {
+color: white;
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>CHAT IA </h1>
+</div>
+  <br><br>
+  <center>
+  <div class="image-wrapper">
+    <img src="https://telegra.ph/file/8ff3f6e58eaaadafd5db7.jpg" alt="Carregando...">
+  </div>
+  </center>
+  <p id="text"></p>
+
+<div class="buttons-container">
+  <button class="button" onclick="window.location.href='/raivosap'"">IA RAIVOSA</button>
+    <button class="button" onclick="window.location.href='/ciumentap'"">IA CIUMENTA</button>
+    <button class="button" onclick="window.location.href='/alegrep'"">IA ALEGRE</button>
+   <button class="button" onclick="window.location.href='/normalp'"">IA NORMAL</button>
+  <button class="button" onclick="window.location.href='/amavelp'"">IA AMAVEL</button>
+  <button class="button" onclick="window.location.href='/curiosap'"">IA CURIOSA</button>
+   <button class="button" onclick="window.location.href='/namoradap'"">IA NAMORADA</button>
+  
+</div>
+
+  <br><br><br><br><br><br><br><br><br><br>
+  <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <p class="text-muted d-block text-center text-sm-left mb-0">Copyright © 2024 Dark Stars</p>
+      </div>
+  </footer>
+<script>
+const textElement = document.getElementById('text');
+const phrases = ['Bem-Vindo.', 'Ainda estamos em desenvolvimento', 'Explore nossas opções.', 'Obrigado por usar nossa api.', 'rest api by dark stars','esplore a sua criatividade na nossa api','estamos sempre trazendo o melhor conteudo para voce'];
+let phraseIndex = 0;
+let letterIndex = 0;
+
+function typeWriter() {
+  if (letterIndex < phrases[phraseIndex].length) {
+    textElement.innerHTML += phrases[phraseIndex].charAt(letterIndex);
+    letterIndex++;
+    setTimeout(typeWriter, 100);
+  } else {
+    setTimeout(() => {
+      textElement.innerHTML = ''; // Limpa o texto para a próxima frase.
+      letterIndex = 0; // Reseta o índice da letra.
+      phraseIndex = (phraseIndex + 1) % phrases.length; // Passa para a próxima frase.
+      typeWriter(); // Reinicia a digitação.
+    }, 2000); // Espera um pouco antes de começar a digitar novamente.
+  }
+}
+
+// Inicia a digitação assim que a página carrega.
+document.addEventListener('DOMContentLoaded', typeWriter);
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js">
+  </script>
+</body>
+</html>
